@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { RiHomeFill } from 'react-icons/ri';
+import { RiHomeFill, RiContactsFill } from 'react-icons/ri';
 import { IoIosArrowForward } from 'react-icons/io';
 import logo from '../assets/logonew.png';
 import { categories } from '../utils/data';
@@ -33,6 +33,15 @@ const Sidebar = ({ closeToggle, user }) => {
           >
             <RiHomeFill />
             Home
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? isActiveStyle : isNotActiveStyle)}
+            onClick={handleCloseSidebar}
+          >
+            <RiContactsFill />
+            Contact & Contribute
           </NavLink>
           <h3 className="mt-2 px-5 text-base 2xl:text-xl">Discover cateogries</h3>
           {categories.slice(0, categories.length - 1).map((category) => (
